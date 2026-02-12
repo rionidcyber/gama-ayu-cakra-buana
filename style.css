@@ -404,8 +404,106 @@ body {
   box-shadow: 0 10px 25px rgba(46, 125, 50, 0.35);
 }
 
-/* RESPONSIVE */
+/* ================= CLEAN RESPONSIVE ================= */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
 @media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    height: auto;
+    background-position: center;
+  }
+
+  .hero::after {
+    pointer-events: none;
+  }
+
+  .hero .content {
+    padding: 2rem 5%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero .content h1 {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+
+  .hero .content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+
+  .hero .content .cta {
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+  }
+
+  /* NAVBAR */
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 70%;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: var(--darktext);
+    display: block;
+    margin: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  /* ABOUT */
+  .about .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about .row .about-img img {
+    max-width: 320px;
+    margin: auto;
+  }
+
+  /* MENU */
+  .menu .row {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .menu-card img {
+    max-width: 220px;
+  }
+
+  /* CONTACT */
   .contact .row {
     flex-direction: column;
   }
@@ -415,148 +513,13 @@ body {
   }
 }
 
-/* Media Queries */ /* Laptop */
-@media (max-width: 1366px) {
-  html {
-    font-size: 75%;
-  }
-} /* Tablet */
-@media (max-width: 768px) {
+/* HP kecil */
+@media (max-width: 450px) {
   html {
     font-size: 50%;
   }
-  .hero {
-    @media (max-width: 768px) {
-      .hero {
-        min-height: 100vh;
-        height: auto;
-        background-position: center;
-      }
-    }
-  }
 
-  .hero::after {
-    pointer-events: none;
-  }
-  .hero .content {
-    position: relative;
-    z-index: 2;
-  }
-  @media (max-width: 768px) {
-    .hero .content h1 {
-      font-size: 2.5rem;
-      line-height: 1.3;
-    }
-
-    .hero .content p {
-      font-size: 1.4rem;
-      line-height: 1.6;
-    }
-
-    .hero .content .cta {
-      font-size: 1.3rem;
-      padding: 0.8rem 2rem;
-    }
-  }
-
-  #hamburger-menu {
-    display: inline-block;
-  }
-  .navbar .navbar-nav {
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    background-color: #fff;
-    width: 30rem;
-    height: 100vh;
-    transition: 0.3s;
-  }
-  .navbar .navbar-nav.active {
-    right: 0;
-  }
-  .navbar .navbar-nav a {
-    color: var(--darktext);
-    display: block;
-    margin: 1.5rem;
-    padding: 0.5rem;
-    font-size: 2rem;
-  }
-  .navbar .navbar-nav a::after {
-    transform-origin: 0 0;
-  }
-  .navbar .navbar-nav a:hover::after {
-    transform: scaleX(0.3);
-  }
-  .about .row {
-    flex-direction: column;
-    text-align: center;
-  }
-  @media (max-width: 768px) {
-    .about .row {
-      flex-direction: column;
-      text-align: center;
-    }
-    .about .row .about-img img {
-      width: 100%;
-      max-width: 320px;
-      height: auto; /* penting biar gak kepotong */
-      object-fit: contain; /* penting biar gambar full */
-    }
-    .about .row .contentc {
-      padding: 0;
-    }
-    .about .row .contentc h3 {
-      margin-top: 1rem;
-      font-size: 1.5rem;
-    }
-  }
-  .about .row .contentc {
-    padding: 0;
-  }
-  .about .row .contentc h3 {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-  } /* MENU RESPONSIVE */
-  .menu .row {
-    grid-template-columns: 1fr;
-  }
-  .menu-card {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .menu-card img {
-    max-width: 220px;
-  }
-}
-@media (max-width: 450px) {
-  html {
-    font-size: 45%;
-  }
-}
-/* ========== RESPONSIVE HERO FIX ========== */
-@media (max-width: 768px) {
   .hero .content h1 {
-    font-size: 2rem;
-    line-height: 1.2;
+    font-size: 1.8rem;
   }
-  .hero .content p {
-    font-size: 1.2rem;
-  }
-  .hero .content .cta {
-    font-size: 1.2rem;
-    padding: 0.8rem 2rem;
-  }
-  .hero .content {
-    padding: 2rem 5%;
-  }
-}
-
-.hero::after {
-  pointer-events: none;
-}
-
-.hero .content {
-  position: relative;
-  z-index: 2;
 }
